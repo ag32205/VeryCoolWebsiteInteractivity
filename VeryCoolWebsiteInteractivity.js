@@ -8,7 +8,12 @@ document.getElementById("riku").onmouseout = function() {mouseOut()};
 document.getElementById("duck").onmouseover = function() {mouseOver2()};
 document.getElementById("duck").onmouseout = function() {mouseOut2()};
 
+document.getElementById("tpose").onmouseover = function() {mouseClick()};
 
+
+function mouseClick() {
+
+}
 function mouseOver() {
 battle.play();
 }

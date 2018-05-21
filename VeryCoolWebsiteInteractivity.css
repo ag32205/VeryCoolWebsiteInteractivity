@@ -119,10 +119,15 @@
     animation-fill-mode: forwards;
     background-image: url('Pics/the%20duane.gif');
     background-size: cover;
-
+  cursor: pointer;
 
 }
+#mouse {
+    position: relative;
+}
+#mouse:hover {
 
+}
 
 
 #intro {
