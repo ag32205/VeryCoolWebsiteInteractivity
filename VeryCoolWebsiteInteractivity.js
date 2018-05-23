@@ -1,35 +1,57 @@
-var src = document.createAttribute('src');
-src.value = "Pics/riku.jpg";
 
 
-document.getElementById("riku").onmouseover = function() {mouseOver()};
-document.getElementById("riku").onmouseout = function() {mouseOut()};
+document.getElementById("riku").onmouseover = function () {
+    mouseOver()
+};
+document.getElementById("riku").onmouseout = function () {
+    mouseOut()
+};
 
-document.getElementById("duck").onmouseover = function() {mouseOver2()};
-document.getElementById("duck").onmouseout = function() {mouseOut2()};
+document.getElementById("duck").onmouseover = function () {
+    mouseOver2()
+};
+document.getElementById("duck").onmouseout = function () {
+    mouseOut2()
+};
 
-document.getElementById("tpose").onmouseover = function() {mouseClick()};
+document.getElementById("tpose").onmouseover = function () {
+    mouseClick()
+};
 
 
 function mouseClick() {
 
 }
+
 function mouseOver() {
-battle.play();
+    battle.play();
 }
 
 function mouseOut() {
-  battle.pause();
+    battle.pause();
 }
 
 function mouseOver2() {
-quack.play();
+    quack.play();
 }
 
 function mouseOut2() {
-  quack.pause();
+    quack.pause();
 }
 var battle = new Audio('Sounds/battle.mp3')
 var quack = new Audio('Sounds/donald.mp3')
-var snd = new Audio('Sounds/give_it_all.mp3');
+var snd = new Audio('Sounds/earthbound.mp3');
 snd.play();
+
+
+var cursor = document.getElementById('mouse');
+
+function update(event) {
+    var x = event.clientX;
+    var y = event.clientY - 700;
+
+    cursor.style.top = y + 'px';
+    cursor.style.left = x + 'px';
+}
+
+document.addEventListener("mousemove", update);
