@@ -1,4 +1,80 @@
 
+var mamamia = document.getElementById('mouse');
+var background = document.getElementById('background');
+var cursor = document.getElementById('mouse');
+var src = document.createAttribute('src');
+var src2 = document.createAttribute('src');
+var srcboard = document.createAttribute('src');
+var weirdclass = document.createAttribute('class');
+var bclass = document.createAttribute('class');
+var imgclass = document.createAttribute('class');
+weirdclass.value = "normalweird";
+src.value = "Pics/yobby.jpg";
+src2.value = "Pics/remy.png";
+imgclass.value = "normal";
+
+
+
+bclass.value = "normal";
+background.setAttributeNode(bclass);
+lordofchaos.setAttributeNode(src);
+lordofchaos.setAttributeNode(weirdclass);
+cursor.setAttributeNode(src2);
+
+
+
+lordofchaos.style.height = "2700px";
+lordofchaos.style.width = "2200px";
+
+
+function update(event) {
+   var x = event.clientX - 80;
+   var y = event.clientY - 50;
+
+
+
+   cursor.style.top = y + 'px';
+   cursor.style.left = x + 'px';
+}
+
+
+
+document.addEventListener("mousemove", update);
+
+
+document.body.onmousedown = function () {
+
+
+
+   bclass.value = "evil";
+   src2.value = "Pics/feel.png";
+}
+
+
+document.body.onmouseup = function () {
+
+
+
+   bclass.value = "normal";
+   src2.value = "Pics/remy.png";
+}
+
+
+
+document.body.onkeydown = function (e) {
+
+   if (e.keyCode === 67) {
+       bclass.value = "wheezer";
+       src.value = "Pics/intresring.jpg";
+       src2.value = "Pics/lizard.jpg";
+       earrapesoviet.play();
+   }
+
+}
+
+
+
+
 
 document.getElementById("riku").onmouseover = function () {
     mouseOver()
@@ -35,72 +111,6 @@ function mouseOut2() {
 }
 var battle = new Audio('Sounds/battle.mp3')
 var quack = new Audio('Sounds/donald.mp3')
-var snd = new Audio('Sounds/earthbound.mp3');
+var snd = new Audio('Sounds/give_it_all.mp3');
 snd.play();
 
-
-
-
-
-
-
-
-
-
-
-var cursor = document.getElementById('mouse');
-
-function update(event) {
-    var x = event.clientX;
-    var y = event.clientY - 700;
-
-    cursor.style.top = y + 'px';
-    cursor.style.left = x + 'px';
-}
-document.addEventListener("mousemove", update);
-
-
-
-
-
-
-function Keyset(left, right, up) {
-    this.l = left;
-    this.r = right;
-    this.u = up;
-    this.left = Boolean;
-    this.right = Boolean;
-    this.up = Boolean;
-
-    this.moving = Boolean;
-    this.jumping = Boolean;
-    this.attacking = Boolean;
-    this.descend = Boolean;
-}
-var keys = new Keyset(37, 39, 38);
-
-
-
-function stop(e) {
-    if (e.keyCode === keys.r || e.keyCode === keys.l) {
-        keys.moving = false;
-
-        document.getElementById('player1').src = "sprite_red/practice_idle.png";
-    }
-    if (e.keyCode === keys.u) {
-        keys.jumping = false;
-        document.getElementById('player1').src = "sprite_red/practice_idle.png";
-    }
-    if (e.keyCode || keys1.r && e.keyCode === keys1.l) {
-        keys1.moving = false;
-        document.getElementById('player2').src = "sprite_red/practice_idle.png";
-    }
-    if (e.keyCode === keys1.u) {
-        keys1.jumping = false;
-        document.getElementById('player1').src = "sprite_red/practice_idle.png";
-    }
-
-
-};
-
-window.addEventListener('keyup', stop);
