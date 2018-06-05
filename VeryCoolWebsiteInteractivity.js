@@ -5,31 +5,26 @@ var cursor = document.getElementById('mouse');
 var src = document.createAttribute('src');
 var src2 = document.createAttribute('src');
 var srcboard = document.createAttribute('src');
-var weirdclass = document.createAttribute('class');
+var aclass = document.createAttribute('class');
 var bclass = document.createAttribute('class');
 var imgclass = document.createAttribute('class');
-weirdclass.value = "normalweird";
+aclass.value = "normalweird";
 src.value = "Pics/yobby.jpg";
 src2.value = "Pics/remy.png";
 imgclass.value = "normal";
 
 
 
-bclass.value = "normal";
-background.setAttributeNode(bclass);
-lordofchaos.setAttributeNode(src);
-lordofchaos.setAttributeNode(weirdclass);
+
+
 cursor.setAttributeNode(src2);
 
 
 
-lordofchaos.style.height = "2700px";
-lordofchaos.style.width = "2200px";
-
 
 function update(event) {
-   var x = event.clientX - 80;
-   var y = event.clientY - 50;
+   var x = event.clientX - 180;
+   var y = event.clientY - 100;
 
 
 
@@ -41,21 +36,19 @@ function update(event) {
 
 document.addEventListener("mousemove", update);
 
+var melee = new Audio('Sounds/BLIP.mp3');
 
 document.body.onmousedown = function () {
 
 
-
-   bclass.value = "evil";
-   src2.value = "Pics/feel.png";
+melee.play();
+   src2.value = "Pics/blip.png";
 }
 
 
 document.body.onmouseup = function () {
 
-
-
-   bclass.value = "normal";
+melee.pause();
    src2.value = "Pics/remy.png";
 }
 
@@ -63,12 +56,22 @@ document.body.onmouseup = function () {
 
 document.body.onkeydown = function (e) {
 
-   if (e.keyCode === 67) {
-       bclass.value = "wheezer";
+   if (e.keyCode === 38) {
        src.value = "Pics/intresring.jpg";
        src2.value = "Pics/lizard.jpg";
-       earrapesoviet.play();
    }
+    if (e.keyCode === 40) {
+        src2.value = "Pics/feel.png"
+        src.value = "Pics/trumpet.jpg"
+        }
+         if (e.keyCode === 37) {
+        src2.value = "Pics/agro.jpg"
+        src.value = "Pics/sora.jpg"
+        }
+     if (e.keyCode === 39) {
+        src2.value = "Pics/funky.png"
+        src.value = "Pics/wakanda.jpg"
+        }
 
 }
 
